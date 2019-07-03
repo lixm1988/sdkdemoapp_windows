@@ -6,18 +6,13 @@ import * as selectors from "@/stores/selectors";
 import { Menu, Checkbox, Input } from "antd";
 import HeadImageView from "@/views/common/head_image";
 import _ from "underscore";
-import api from "@/api";
 import { utils } from "@/utils/utils";
-const Search = Input.Search;
-var latest = utils.latestFunc();
 
 class ContactView extends PureComponent {
 
 	constructor(props){
 		super(props);
 		this.handleOnChange = this.handleOnChange.bind(this);
-		this.handleChangeSearchVal = this.handleChangeSearchVal.bind(this);
-		this.searchValue = "";
 	}
 
 	handleOnChange(e, item){
@@ -28,22 +23,6 @@ class ContactView extends PureComponent {
 		else{
 			cancelMembersAction(item);
 		}
-	}
-
-	handleChangeSearchVal(e){
-		const { userInfo, searchMember } = this.props;
-		this.searchValue = e.target.value;
-		api.searchMember(userInfo.user.tenantId, e.target.value)
-		.done(latest(function(dataSource){
-			var members = {};
-			_.map(dataSource.data, (member) => {
-				if(member.easemobName){
-					members[member.easemobName] = member;
-				}
-			});
-			// return members || [];
-			searchMember(members);
-		}));
 	}
 
 	//

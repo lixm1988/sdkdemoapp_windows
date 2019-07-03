@@ -7,7 +7,6 @@ import { Input, Button, Upload, Icon, Modal } from "antd";
 import uuid from "uuid";
 import _ from "underscore";
 import { ipcRenderer } from "electron";
-import { audioAndVideo } from "@/views/main/receive_audio_video";
 // import $ from "jquery";
 const { remote } = require("electron");
 let configDir = remote.app.getPath("userData");

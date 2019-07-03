@@ -8,8 +8,6 @@ import * as actionCreators from "@/stores/actions";
 import TopNav from "./topnav";
 import moment from "moment";
 import { utils } from "@/utils/utils";
-import { userChange } from "./receive_notice";
-import api from "@/api";
 import _ from "underscore";
 import ROUTES from "../common/routes";
 import { conversationOfSelect } from "../../stores/actions";
