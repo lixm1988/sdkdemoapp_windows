@@ -1135,7 +1135,7 @@ class MainView extends PureComponent {
 	onMessageAttachmentsStatusChanged(message,error){
 		console.log("onMessageAttachmentsStatusChanged");
 		let msg = message.bodies()[0];
-		console.log(msg.downloadStatus());
+		console.log(msg.downloadStatus(),msg.thumbnailDownloadStatus());
 		console.log(msg);
 		console.log(msg.remotePath(),msg.localPath(),msg.type());
 	}

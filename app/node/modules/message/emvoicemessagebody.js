@@ -129,7 +129,7 @@ EMVoiceMessageBody.prototype.setDownloadStatus = function (downloadStatus) {
 
 /**
  * Get file downloading status
- * @return {Number} 返回消息下载状态
+ * @return {Number} 返回消息下载状态,0:正在下载， 1:下载成功， 2:下载失败， 3:状态未知
  */
 EMVoiceMessageBody.prototype.downloadStatus = function () {
   return this._body.downloadStatus();

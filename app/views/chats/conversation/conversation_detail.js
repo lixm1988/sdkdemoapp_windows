@@ -154,9 +154,13 @@ class ConversationDetailView extends Component {
 		case "FILE":
 			return <FileView msg={ msg } item={ item } { ...this.props } />;
 		case "VIDEO":
-			return <div>[收到一段视频，请在手机上查看]</div>;
+			console.log(msg);
+			let size = item.bodies()[0].size();
+			console.log(size);
+			return <div>{<video src={msg.localPath} muted={false} controls width={240} height={320}></video>}</div>;
 		case "AUDIO":
-			return <div>[收到一段语音，请在手机上查看]</div>;
+			console.log(msg);
+			return <div>{<audio src={msg.url} muted={false} controls ></audio>}</div>;
 			// return <AudioView { ...msg } />;
 		case "LOCATION":
 			return <div>[收到位置消息，请在手机上查看]</div>;

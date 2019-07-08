@@ -123,7 +123,7 @@ EMMessage.prototype.setConversationId = function (conversationId) {
 
 /**
  * Get message status.
- * @return {Number} 返回消息状态
+ * @return {Number} 返回消息状态, 0新建消息，1正在发送，2发送成功，3发送失败
  */
 EMMessage.prototype.status = function () {
   return this._message.status();
